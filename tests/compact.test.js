@@ -15,7 +15,7 @@ describe("compact function", () => {
     });
 
     it("2.4 should not return an empty string value with empty string in array", () => {
-        expect(compact(["", 1).to.equal([1]));
+        expect(compact(["", 1]).to.equal([1]));
     });
 
     it("2.5 should return string with non-empty string in array", () => {
@@ -24,7 +24,7 @@ describe("compact function", () => {
 
     //TEST_FAILED
     it("2.6 should return NaN with undefined value in array", () => {
-        expect(compact([undefined]).to.be.NaN;
+        expect(compact([undefined]).to.be.NaN);
     });
 
     it("2.7 should return [] with empty array", () => {
@@ -37,11 +37,11 @@ describe("compact function", () => {
 
     it("2.9 should return [object] with object in array", () => {
         const obj = compact([new Object()]);
-        expect(compact([obj]).to.deep.equal([obj));
+        expect(compact([obj]).to.deep.equal([obj]));
     });
 
     // TEST_FAILED
     it("2.10 should throw error with non-array", () => {
-        expect(compact("abc").to.be.NaN;
+        expect(compact("abc").to.be.NaN);
     });
 });

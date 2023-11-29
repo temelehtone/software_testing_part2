@@ -13,7 +13,7 @@ describe("filter function", () => {
     const predicate = ({active}) => active
 
     it("5.1 should return correct value when filtered", () => {
-        expect(filter(arr, predicate).to.equal([{'user': bob, active: true}]);
+        expect(filter(arr, predicate).to.equal([{'user': bob, active: true}]));
     });
 
     it("5.2 should return empty nested array in case array is null", () => {
@@ -26,7 +26,7 @@ describe("filter function", () => {
 
     it("5.4 should filter odd numbers", () => {
         const arr = [1,2,3]
-        const pred = (val) => val % != 0
+        const pred = (val) => val % 2 !== 0
 
         expect(filter(arr, pred).to.equal([1, 3]));
     });

@@ -24,7 +24,7 @@ describe("toNumber function", () => {
 
     // TEST_FAILED
     it("8.6 should return NaN when parameter is undefined", () => {
-        expect(toNumber(undefined).to.be.NaN;
+        expect(toNumber(undefined).to.be.NaN);
     });
 
     it("8.7 should return 0 when parameter is null", () => {
@@ -34,12 +34,12 @@ describe("toNumber function", () => {
     // TEST_FAILED
     it("8.8 should return NaN when parameter is object", () => {
         const obj = compact([new Object()]);
-        expect(toNumber([obj]).to.be.NaN;
+        expect(toNumber([obj]).to.be.NaN);
     });
 
     // TEST_FAILED
     it("8.9 should return NaN when parameter is array", () => {
-        expect(toNumber([1, 2]).to.to.be.NaN;
+        expect(toNumber([1, 2]).to.to.be.NaN);
     });
 
     it("8.10 should return 0 when parameter is false", () => {
@@ -56,6 +56,6 @@ describe("toNumber function", () => {
 
     // TEST_FAILED
     it("8.13 should return NaN when parameter is overflow", () => {
-        expect(toNumber(Number.MAX_VALUE + 1).to.be.NaN;
+        expect(toNumber(Number.MAX_VALUE + 1).to.be.NaN);
     });
 });
