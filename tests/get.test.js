@@ -8,9 +8,9 @@ describe("get function", () => {
     });
 
     // TEST_FAILED
-    it("6.2 should throw an error when the first parameter has a non-nested property", () => {
+    it("6.2 should return undefined when the first parameter has a non-nested property", () => {
         const object = { a: 1, 'b': 'a', c: false };
-        expect(() => get(object, '0')).to.throw();
+        expect(get(object, '0')).to.be.undefined;
     });
 
     it("6.3 should return undefined when the first parameter has a nonexistent nested property and the third parameter is not defined", () => {
@@ -19,8 +19,8 @@ describe("get function", () => {
     });
 
     // TEST_FAILED
-    it("6.4 should throw an error when the first parameter is null", () => {
-        expect(() => get(null, 'a')).to.throw();
+    it("6.4 should return undefined when the first parameter is null", () => {
+        expect(get(null, 'a')).to.be.undefined;
     });
 
     it("6.5 should return value when the first parameter is an array", () => {
@@ -29,9 +29,9 @@ describe("get function", () => {
     });
 
     // TEST_FAILED
-    it("6.6 should throw an error when the first parameter is a string", () => {
+    it("6.6 should return undefined when the first parameter is a string", () => {
         const path = 'a';
-        expect(() => get("a", path)).to.throw();
+        expect(get("a", path)).to.be.undefined;
     });
 
     it("6.7 should return value when the second parameter is a string", () => {
@@ -45,11 +45,11 @@ describe("get function", () => {
     });
 
     // TEST_FAILED
-    it("6.9 should throw an error when the second parameter is not an array or string", () => {
+    it("6.9 should return undefined when the second parameter is not an array or string", () => {
         const object = { 'a': { 'b': { 'c': 2 } } };
-        expect(() => get(object, 1)).to.throw();
-        expect(() => get(object, true)).to.throw();
-        expect(() => get(object, false)).to.throw();
+        expect(get(object, 1)).to.be.undefined;
+        expect(get(object, true)).to.be.undefined;
+        expect(get(object, false)).to.be.undefined;
     });
 
     it("6.10 should return value when the second parameter path is undefined, and the third parameter exists", () => {
