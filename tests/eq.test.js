@@ -49,4 +49,19 @@ describe("eq function", () => {
     it("4.12 should return false in case of negative and positive numeral", () => {
         expect(eq(1, -1)).to.equal(false);
     });
+
+    it("4.13 should return true in case of NaN comparison", () => {
+        expect(eq(NaN, NaN)).to.equal(true);
+    });
+
+    it("4.14 should return true in case of 0 and -0 comparison", () => {
+        expect(eq(0, -0)).to.equal(true);
+    });
+
+    it("4.15 should return true in case of two deeply same objects", () => {
+        expect(eq({a:2, b:3}, {a:2, b:3})).to.equal(true);
+    });
+    it("4.16 should return false in case of two deeply unequal objects", () => {
+        expect(eq({a:1}, {a:2})).to.equal(false);
+    });
 });

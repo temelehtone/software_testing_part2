@@ -49,4 +49,16 @@ describe("toString function", () => {
     it("9.11 should return value when parameter has sign (-)", () => {
         expect(toString(-0)).to.equal("-0");
     });
+
+    it("9.12 should return value when parameter is Symbol", () => {
+        expect(toString(Symbol("hello"))).to.equal("Symbol(hello)");
+    });
+
+    it("9.13 should return joined values when parameter is array including array", () => {
+        expect(toString([1, [1, 3]])).to.equal("1,1,3");
+    });
+
+    it("9.14 should return joined values where undefined value is empty string", () => {
+        expect(toString([1, true, null, "hello", undefined])).to.equal("1,true,,hello,");
+    });
 });

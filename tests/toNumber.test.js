@@ -54,4 +54,20 @@ describe("toNumber function", () => {
     it("8.13 should return undefined when parameter is overflow", () => {
         expect(toNumber(Number.MAX_VALUE + 1)).to.be.undefined;
     });
+
+    it("8.14 should return NaN when parameter is Symbol", () => {
+        expect(toNumber(Symbol("test"))).to.be.NaN;
+    });
+
+    it("8.15 should return NaN when parameter is wrong hexadecimal", () => {
+        expect(toNumber("0xwrong_hex")).to.be.NaN;
+    });
+
+    it("8.16 should return decimal number when parameter is binary", () => {
+        expect(toNumber("0b10101010")).to.equal(170);
+    });
+
+    it("8.17 should return 0 when parameter is string 0", () => {
+        expect(toNumber("0")).to.equal(0);
+    });
 });

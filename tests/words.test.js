@@ -34,4 +34,24 @@ describe("words function", () => {
         expect(() => words(new Object())).to.throw();
         expect(() => words(undefined)).to.throw();
     });
+
+    it("10.7 should return the word when pattern is undefined", () => {
+        expect(words("test", undefined)).to.deep.equal(["test"]);
+    });
+
+    it("10.8 should return array with empty string when pattern is empty string", () => {
+        expect(words("test", "")).to.deep.equal([""]);
+    });
+
+    it("10.9 should return empty array when word does not contain pattern", () => {
+        expect(words("test", "fail")).to.deep.equal([]);
+    });
+
+    it("10.10 should return the pattern word when pattern is in the word", () => {
+        expect(words("hello world", "hello")).to.deep.equal(["hello"]);
+    });
+
+    it("10.11 should return set of words equal to pattern inside the word", () => {
+        expect(words("test test hello", "test")).to.deep.equal(["test"]);
+    });
 });
