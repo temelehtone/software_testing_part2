@@ -7,7 +7,6 @@ describe("get function", () => {
         expect(get(object, 'a')).to.equal(4);
     });
 
-    // TEST_FAILED
     it("6.2 should return undefined when the first parameter has a non-nested property", () => {
         const object = { a: 1, 'b': 'a', c: false };
         expect(get(object, '0')).to.be.undefined;
@@ -18,7 +17,6 @@ describe("get function", () => {
         expect(get(object, 'b')).to.equal(undefined);
     });
 
-    // TEST_FAILED
     it("6.4 should return undefined when the first parameter is null", () => {
         expect(get(null, 'a')).to.be.undefined;
     });
@@ -28,7 +26,6 @@ describe("get function", () => {
         expect(get(object, 'a[1]')).to.equal(2);
     });
 
-    // TEST_FAILED
     it("6.6 should return undefined when the first parameter is a string", () => {
         const path = 'a';
         expect(get("a", path)).to.be.undefined;
@@ -44,7 +41,6 @@ describe("get function", () => {
         expect(get(object, ['a', 'b', 'c'])).to.equal(2);
     });
 
-    // TEST_FAILED
     it("6.9 should return undefined when the second parameter is not an array or string", () => {
         const object = { 'a': { 'b': { 'c': 2 } } };
         expect(get(object, 1)).to.be.undefined;

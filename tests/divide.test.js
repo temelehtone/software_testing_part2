@@ -26,42 +26,34 @@ describe("divide function", () => {
         expect(divide(-4, -2)).to.equal(2);
     });
 
-    // TEST_FAILED
     it("3.7 should return undefined when parameter is string", () => {
         expect(divide("a", 2)).to.be.undefined;
     });
 
-    // TEST_FAILED
     it("3.8 should return undefined with large numbers", () => {
         expect(divide(Number.MAX_VALUE, 0.1)).to.be.undefined;
     });
 
-    // TEST_FAILED
     it("3.9 should return undefined when parameter is null", () => {
         expect(divide(1, null)).to.be.undefined;
     });
 
-    // TEST_FAILED
     it("3.10 should return undefined when parameter is undefined", () => {
         expect(divide(4, undefined)).to.be.undefined;
     });
 
-    // TEST_FAILED
     it("3.11 should return undefined when parameter is boolean", () => {
         expect(divide(true, false)).to.be.undefined;
     });
 
-    // TEST_FAILED
     it("3.12 should return undefined when parameter is object", () => {
         expect(divide(new Object(), 1)).to.be.undefined;
     });
 
-    // TEST_FAILED
     it("3.13 should return undefined when parameter is array", () => {
         expect(divide([], [])).to.be.undefined;
     });
 
-    // TEST_FAILED
     it("3.14 should return undefined when parameter is zero", () => {
         expect(divide(1, 0)).to.be.undefined;
     });

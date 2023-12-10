@@ -27,8 +27,7 @@ describe("words function", () => {
         expect(words("ab\tcd")).to.deep.equal(["ab", "cd"]);
     });
 
-    // TEST_FAILED
-    it("10.6 should return undefined with non-string values", () => {
+    it("10.6 should throw error with non-string values", () => {
         expect(() => words(1)).to.throw();
         expect(() => words(true)).to.throw();
         expect(() => words([])).to.throw();

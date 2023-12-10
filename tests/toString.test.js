@@ -41,4 +41,12 @@ describe("toString function", () => {
     it("9.10 should return value when parameter is decimal", () => {
         expect(toString(3.14)).to.equal("3.14");
     });
+
+    it("9.10 should return value when parameter is decimal", () => {
+        expect(toString(3.14)).to.equal("3.14");
+    });
+
+    it("9.11 should return value when parameter has sign (-)", () => {
+        expect(toString(-0)).to.equal("-0");
+    });
 });

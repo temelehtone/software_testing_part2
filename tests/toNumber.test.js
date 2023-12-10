@@ -22,7 +22,6 @@ describe("toNumber function", () => {
         expect(toNumber("3.2")).to.equal(3.2);
     });
 
-    // TEST_FAILED
     it("8.6 should return NaN when parameter is undefined", () => {
         expect(toNumber(undefined)).to.be.NaN;
     });
@@ -31,13 +30,11 @@ describe("toNumber function", () => {
         expect(toNumber(null)).to.equal(0);
     });
 
-    // TEST_FAILED
     it("8.8 should return NaN when parameter is object", () => {
         const obj = new Object();
         expect(toNumber([obj])).to.be.NaN;
     });
 
-    // TEST_FAILED
     it("8.9 should return NaN when parameter is array", () => {
         expect(toNumber([1, 2])).to.be.NaN;
     });
@@ -54,7 +51,6 @@ describe("toNumber function", () => {
         expect(toNumber('2')).to.equal(2);
     });
 
-    // TEST_FAILED
     it("8.13 should return undefined when parameter is overflow", () => {
         expect(toNumber(Number.MAX_VALUE + 1)).to.be.undefined;
     });

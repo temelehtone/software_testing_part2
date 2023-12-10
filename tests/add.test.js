@@ -22,22 +22,18 @@ describe("add function", () => {
     expect(add(-1, -2)).to.equal(-3);
   });
 
-  // TEST_FAILED
   it("1.6 should return undefined when adding 'a' and 'b' (string concatenation)", () => {
     expect(add("a", "b")).to.be.undefined;
   });
 
-  // TEST_FAILED
   it("1.7 should return undefined when adding Number.MAX_VALUE and 1 (overflow)", () => {
     expect(add(Number.MAX_VALUE, 1)).to.be.undefined;
   });
 
-  // TEST_FAILED
   it("1.8 should return undefined when adding 1 and null", () => {
     expect(add(1, null)).to.be.undefined;
   });
 
-  // TEST_FAILED
   it("1.9 should return undefined when adding 1 and undefined", () => {
     expect(add(1, undefined)).to.be.undefined;
   });
@@ -50,8 +46,19 @@ describe("add function", () => {
     expect(add(new Object(), new Object())).to.be.undefined;
   });
 
-  // TEST_FAILED
   it("1.12 should return undefined when adding two arrays [1] and [2] (concatenation)", () => {
     expect(add([1], [2])).to.be.undefined;
+  });
+
+  it("1.12.1 should return sum when adding two arrays with multiple values", () => {
+    expect(add([1,2,3], [4,5,6])).to.equal(21);
+  });
+
+  it("1.12.2 should return sum when adding array and number", () => {
+    expect(add([1], 1)).to.equal(2);
+  });
+
+  it("1.12.3 should return sum as string when adding array and string", () => {
+    expect(add([1], "ab")).to.equal("1ab");
   });
 });

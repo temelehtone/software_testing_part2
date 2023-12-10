@@ -14,12 +14,10 @@ describe("reduce function", () => {
         expect(reduce([], iter, acc)).to.equal([]);
     });
 
-    // TEST_FAILED
     it("7.3 should return undefined when first parameter is not an array or object", () => {
         expect(reduce(123, iter, acc)).to.be.undefined;
     });
 
-    // TEST_FAILED
     it("7.4 should throw error when second parameter is not a function", () => {
         expect(() => reduce([1, 2, 3], "a", acc)).to.throw();
     });
@@ -28,8 +26,15 @@ describe("reduce function", () => {
         expect(reduce([1, 2, 3], iter)).to.equal(6);
     });
 
-    // TEST_FAILED
-    it("7.6 should return undefined when third parameter is not a number", () => {
+    it("7.6 should return undefined when third parameter is string", () => {
         expect(reduce([1, 2, 3], iter, "a")).to.be.undefined;
+    });
+
+    it("7.6.1 should return undefined when third parameter is object", () => {
+        expect(reduce([1, 2, 3], iter, new Object())).to.be.undefined;
+    });
+
+    it("7.6.2 should return undefined when third parameter is boolean", () => {
+        expect(reduce([1, 2, 3], iter, false)).to.be.undefined;
     });
 });
